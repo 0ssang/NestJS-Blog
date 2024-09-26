@@ -1,12 +1,12 @@
 import { PostDto } from './blog.model';
 import { BlogFileRepository, BlogRepository } from './blog.repository';
+import { Injectable } from '@nestjs/common';
 
+@Injectable()
 export class BlogService {
-    blogRepository: BlogRepository;
-
-    constructor(){
-        this.blogRepository = new BlogFileRepository();
-    }
+    // 생성자를 통한 의존성 주입
+    // 인터페이스는 의존성 주입이 되지 않으므로 구현한 클래스를 사용한다
+    constructor(private blogRepository: BlogFileRepository){}
 
     async getAllPosts() {
         return await this.blogRepository.getAllPost();

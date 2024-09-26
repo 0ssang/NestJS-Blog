@@ -11,11 +11,8 @@ import { BlogService } from './blog.service';
 
 @Controller('blog')
 export class BlogController {
-    // NestJS에서 의존성 주입을 주로 사용하지만 아직 배우지 않았으므로 생성자를 사용함
-    blogService: BlogService;
-    constructor() {
-        this.blogService = new BlogService();
-    }
+    // 생성자 주입
+    constructor(private blogService: BlogService) {}
 
     @Get()
     getAllPosts() {
