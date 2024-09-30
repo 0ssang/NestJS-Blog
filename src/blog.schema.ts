@@ -19,10 +19,10 @@ export class Blog {
     name: string;
 
     @Prop()
-    createDt: Date;
+    createdDt: Date;
 
     @Prop()
-    updateDt: Date;
+    updatdeDt: Date;
 }
 
 // 스키마를 생성함 내부적으로는 mongoose의 new Schema를 사용한다.
