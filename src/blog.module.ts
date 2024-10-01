@@ -18,3 +18,4 @@ import { Blog, BlogSchema } from './blog.schema';
     providers: [BlogService, BlogFileRepository, BlogMongoRepository],
 })
 export class AppModule {}
+
